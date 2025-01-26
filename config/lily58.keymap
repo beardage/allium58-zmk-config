@@ -10,7 +10,7 @@
 #include <dt-bindings/zmk/ext_power.h>
 
 #define HYP LS(LC(LA(LGUI)))
-#define MEH LS(LC(LALT))
+/* #define MEH LS(LC(LALT)) */
 
 / {
     keymap {
@@ -37,13 +37,13 @@
 // |  F1   |  F2   |  F3    |  F4    |  F5  |  F6  |                   |  F7  |  F8   |  F9   |  F10 |  F11  |  F12   |
 // | BTCLR | BT1   | BT2    |  BT3   |  BT4 |  BT5 |                   |      |       |       |      |       | mute   |
 // |       |       |        |        |      |      |                   |  <-  |   v   |   ^   |  ->  |       | volup  |
-// |       | exton | extoff | exttog |      |      |        |  |       |      |       |       |      |       | voldwn |
+// |       | exton | extoff | exttog |      |      | hyper  |  | hyper |      |       |       |      |       | voldwn |
 //                          |        | home | end  | ESCAPE |  | delete|      |       |       |
             bindings = <
 &kp F1     &kp F2           &kp F3            &kp F4            &kp F5       &kp F6                       &kp F7    &kp F8        &kp F9         &kp F10     &kp F11 &kp F12
 &bt BT_CLR &bt BT_SEL 0     &bt BT_SEL 1      &bt BT_SEL 2      &bt BT_SEL 3 &bt BT_SEL 4                 &trans    &trans        &trans         &trans      &trans  &kp C_MUTE 
 &trans     &trans           &trans            &trans            &trans       &trans                       &kp LEFT  &kp DOWN      &kp UP         &kp RIGHT   &trans  &kp C_VOL_UP 
-&trans     &ext_power EP_ON &ext_power EP_OFF &ext_power EP_TOG &trans       &trans    &kp MEH  &kp HYP   &trans    &trans        &trans         &trans      &trans  &kp C_VOL_DN 
+&trans     &ext_power EP_ON &ext_power EP_OFF &ext_power EP_TOG &trans       &trans    &kp HYP  &kp HYP   &trans    &trans        &trans         &trans      &trans  &kp C_VOL_DN 
                                               &trans            &kp HOME     &kp END   &kp ESC  &kp DEL   &trans    &trans        &trans
             >;
         };
@@ -53,13 +53,13 @@
 // |       |     |     |      |      |      |                   |      |       |       |      |       |       |
 // |       |     |     |      |      |      |                   |      |       |       |      |       |       |
 // |       |     |     |      |      |      |                   |  <-  |   v   |   ^   |  ->  |       |  PGUP |
-// |       |     |     |      |      |      |   meh  |  | hyper |      |       |       |      |       | PGDWN |
+// |       |     |     |      |      |      |  hyper |  | hyper |      |       |       |      |       | PGDWN |
 //                     |      | home | end  | ESCAPE |  | delete|      |       |       |
             bindings = <
 &trans    &trans &trans &trans  &trans    &trans                     &trans    &trans    &trans    &trans   &trans    &trans
 &trans    &trans &trans &trans  &trans    &trans                     &trans    &trans    &trans    &trans   &trans    &trans
 &trans    &trans &trans &trans  &trans    &trans                     &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans    &kp PG_UP
-&trans    &trans &trans &trans  &trans    &trans  &kp MEH   &kp HYP  &trans    &trans    &trans    &trans   &trans    &kp PG_DN
+&trans    &trans &trans &trans  &trans    &trans  &kp HYP   &kp HYP  &trans    &trans    &trans    &trans   &trans    &kp PG_DN
                         &trans  &kp HOME  &kp END &kp ESC   &kp DEL  &trans    &trans    &trans
             >;
         };
